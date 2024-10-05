@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CS476 Blockchain DApp</title>
+</head>
+<body>
+    <div class="container">
+        <h1>ERC-20 Token DApp</h1>
+    
+        <!-- Metamask -->
+        <button onclick="connectWallet()">Connect MetaMask</button>
+        <div id="WalletAddress"></div>
+    
+        <!-- Check Balance Button -->
+        <button onclick="getBalance()">Check Balance</button>
+        <div id="balance"></div>
+    
+        <!-- Transfer Tokens Form -->
+        <h2>Transfer Tokens</h2>
+        <form id="transferForm">
+            <input type="text" id="recipientAddress" placeholder="Recipient Address" required />
+            <input type="number" id="transferAmount" placeholder="Amount" required />
+            <button type="button" onclick="transferTokens(event)">Transfer Tokens</button>
+            <p id="transactionStatus"></p>
+        </form>
+    
+        <!-- Mint Tokens Form -->
+        <h2>Mint Tokens</h2>
+        <form id="mintForm">
+            <input type="number" id="mintAmount" placeholder="Amount to Mint" required />
+            <button type="button" onclick="mintTokens(event)">Mint Tokens</button>
+            <p id="mintStatus"></p>
+        </form>
+    
+        <!-- Approve Tokens Form -->
+        <h2>Approve Tokens</h2>
+        <form id="approveForm">
+            <input type="text" id="spenderAddress" placeholder="Spender Address" required />
+            <input type="number" id="approveAmount" placeholder="Amount to Approve" required />
+            <button type="button" onclick="approveTokens(event)">Approve Tokens</button>
+            <p id="approvalStatus"></p>
+        </form>
+    
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
